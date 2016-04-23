@@ -13,3 +13,6 @@ Create your own local stat database for minecraft.
                                  ```profile.getStatInt(String <PATH>),```
                                  ```profile.getStatFloat(String <PATH>),```
                                  ```profile.getStatBool(String <PATH>)```
+
+# License
+All rights reserved
