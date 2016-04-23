@@ -16,3 +16,5 @@ Create your own local stat database for minecraft.
 
 # License
 All rights reserved
+
+[photo]: http://46.101.229.77/wp-content/uploads/2015/10/github-banner.png
