@@ -1,4 +1,4 @@
-package com.th3shadowbroker.locs;
+package com.th3shadowbroker.loc;
 
 import java.util.ArrayList;
 

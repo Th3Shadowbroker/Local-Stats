@@ -1,6 +1,6 @@
 package com.th3shadowbroker.loc.update;
 
-import com.th3shadowbroker.locs.main;
+import com.th3shadowbroker.loc.main;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
