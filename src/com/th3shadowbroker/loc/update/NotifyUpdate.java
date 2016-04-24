@@ -29,7 +29,7 @@ public class NotifyUpdate implements Listener{
             {
                 
                 p.sendMessage(plugin.prefix + ColorCode.CC("&ePlease update LOCStats !"));
-                p.sendMessage(plugin.prefix + ColorCode.CC("Download the newest version from http://bit.ly/localstats"));
+                p.sendMessage(plugin.prefix + ColorCode.CC("&eDownload the newest version from http://bit.ly/localstats"));
                 
             }
             
