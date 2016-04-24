@@ -8,6 +8,8 @@ import com.th3shadowbroker.loc.cmd.Loc;
 import com.th3shadowbroker.loc.events.Player_Join;
 import com.th3shadowbroker.loc.sys.ColorCode;
 import com.th3shadowbroker.loc.sys.PluginConfig;
+import com.th3shadowbroker.loc.update.NotifyUpdate;
+import com.th3shadowbroker.loc.update.UpdateChecker;
 
 public class main extends JavaPlugin{
 	
@@ -16,13 +18,17 @@ public class main extends JavaPlugin{
 	public String prefix;
 	public String cprefix = "[LocStats] ";
 	
-	public String author = "Th3Shadowbroker";
-	public String version = "1.0.0";
+	public String author = this.getDescription().getAuthors().get(0);
+	public String version = this.getDescription().getVersion();
 
 	//Load-Process
 	public void onEnable()
 	{
 		
+                System.out.println(cprefix + "Checking for updates...");
+                
+                checkForUpdates();
+            
 		loadConfig();
 		
 		System.out.println(cprefix + "Config generated...");
@@ -65,6 +71,9 @@ public class main extends JavaPlugin{
 		
 		this.getServer().getPluginManager().registerEvents(new Player_Join(this), this);
 		System.out.println(cprefix + "LocStats->Player_Join Event registered...");
+                
+                this.getServer().getPluginManager().registerEvents(new NotifyUpdate(this), this);
+		System.out.println(cprefix + "LocStats->NotifyUpdate Event registered...");
 				
 	}
 	
@@ -93,5 +102,26 @@ public class main extends JavaPlugin{
 		this.config = new PluginConfig(this, settingsName, settingsValues, true);
 		
 	}
+        
+        //Check for Updates
+        private void checkForUpdates()
+        {
+            
+            UpdateChecker upc = new UpdateChecker(this,"http://dev.bukkit.org/bukkit-plugins/localstats/files.rss");
+            
+            if ( upc.updateAvailable() )
+            {
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println("====[NOTICE]====");
+                System.out.println("PLEASE UPDATE YOUR LOCSTATS FROM");
+                System.out.println("http://bit.ly/localstats");
+                System.out.println("================");
+                System.out.println(" ");
+                System.out.println(" ");
+                
+            }
+            
+        }
 	
 }
