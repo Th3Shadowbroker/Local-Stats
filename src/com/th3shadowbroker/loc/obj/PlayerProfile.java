@@ -175,6 +175,38 @@ public class PlayerProfile {
             return profile.getConfig().getBoolean(configPrefix + "." + name);
             
         }
+        
+        //Return external stat as String
+	public String getExternalStatStr(Plugin externalPlugin, String name)
+	{
+		
+		return profile.getConfig().getString("[" + externalPlugin.getName() + "]" + "." + player.getUniqueId().toString() + "." + name);
+		
+	}
+        
+         //Return external stat as Integer
+	public Integer getExternalStatInt(Plugin externalPlugin, String name)
+	{
+		
+		return profile.getConfig().getInt("[" + externalPlugin.getName() + "]" + "." + player.getUniqueId().toString() + "." + name);
+		
+	}
+        
+        //Return external stat as Boolean
+	public Boolean getExternalStatBool(Plugin externalPlugin, String name)
+	{
+		
+		return profile.getConfig().getBoolean("[" + externalPlugin.getName() + "]" + "." + player.getUniqueId().toString() + "." + name);
+		
+	}
+        
+         //Return external stat as Float
+	public Float getExternalStatFloat(Plugin externalPlugin, String name)
+	{
+		
+		return (float) profile.getConfig().getInt("[" + externalPlugin.getName() + "]" + "." + player.getUniqueId().toString() + "." + name);
+		
+	}
 	
 	//Save config
 	private void save()
