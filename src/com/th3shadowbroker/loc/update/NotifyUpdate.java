@@ -20,7 +20,7 @@ public class NotifyUpdate implements Listener{
     public void onPlayerJoinUpdateCheck(PlayerJoinEvent ev)
     {
         Player p = ev.getPlayer();
-        UpdateChecker upc = new UpdateChecker(plugin, "http://dev.bukkit.org/bukkit-plugins/localstats/file.rss");
+        UpdateChecker upc = new UpdateChecker(plugin, "http://dev.bukkit.org/bukkit-plugins/localstats/files.rss");
         
         if ( p.isOp() )
         {

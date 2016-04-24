@@ -111,11 +111,14 @@ public class main extends JavaPlugin{
             
             if ( upc.updateAvailable() )
             {
-                
+                System.out.println(" ");
+                System.out.println(" ");
                 System.out.println("====[NOTICE]====");
                 System.out.println("PLEASE UPDATE YOUR LOCSTATS FROM");
                 System.out.println("http://bit.ly/localstats");
                 System.out.println("================");
+                System.out.println(" ");
+                System.out.println(" ");
                 
             }
             
