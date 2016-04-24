@@ -6,10 +6,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.th3shadowbroker.loc.cmd.Loc;
 import com.th3shadowbroker.loc.events.Player_Join;
+import com.th3shadowbroker.loc.metrics.Metrics;
 import com.th3shadowbroker.loc.sys.ColorCode;
 import com.th3shadowbroker.loc.sys.PluginConfig;
 import com.th3shadowbroker.loc.update.NotifyUpdate;
 import com.th3shadowbroker.loc.update.UpdateChecker;
+
+import java.io.IOException;
 
 public class main extends JavaPlugin{
 	
@@ -24,10 +27,14 @@ public class main extends JavaPlugin{
 	//Load-Process
 	public void onEnable()
 	{
-		
-                System.out.println(cprefix + "Checking for updates...");
                 
                 checkForUpdates();
+            
+                System.out.println(cprefix + "Checked for updates...");
+                
+                initMetrics();
+                
+                System.out.println(cprefix + "Metrics loaded...");
             
 		loadConfig();
 		
@@ -123,6 +130,24 @@ public class main extends JavaPlugin{
             }else{
                 
                 System.out.println(cprefix + "Everything is up to date :)");
+                
+            }
+            
+        }
+        
+        //Init PluginMetrics API
+        public void initMetrics()
+        {
+            
+             try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+                
+                System.out.println(cprefix + "Connection with http://mcstats.org established...");
+                
+            } catch (IOException e) {
+                
+                System.out.println(cprefix + "Connection with http://mcstats.org failed...");
                 
             }
             
