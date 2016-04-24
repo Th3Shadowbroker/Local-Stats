@@ -41,7 +41,7 @@ public class UpdateChecker {
 			version = children.item(1).getTextContent().replaceAll("[a-zA-Z ]", "");
 			link = children.item(3).getTextContent();
 			
-			if(! (version.equals(plugin.getDescription().getVersion()) )){
+			if( ! version.equals(plugin.getDescription().getVersion()) ){
 				return true;
 			}
 			
