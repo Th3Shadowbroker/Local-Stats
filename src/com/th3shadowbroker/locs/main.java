@@ -120,6 +120,10 @@ public class main extends JavaPlugin{
                 System.out.println(" ");
                 System.out.println(" ");
                 
+            }else{
+                
+                System.out.println(cprefix + "Everything is up to date :)");
+                
             }
             
         }
