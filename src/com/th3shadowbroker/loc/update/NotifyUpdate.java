@@ -1,7 +1,7 @@
 package com.th3shadowbroker.loc.update;
 
 import com.th3shadowbroker.loc.sys.ColorCode;
-import com.th3shadowbroker.locs.main;
+import com.th3shadowbroker.loc.main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

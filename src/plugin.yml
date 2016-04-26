@@ -1,9 +1,9 @@
 name: LOCStats
-version: 0.4
+version: 0.0.5
 description: LOCStats is a local player-stat system
 author: Th3Shadowbroker
 website: http://crafter629.de
-main: com.th3shadowbroker.locs.main
+main: com.th3shadowbroker.loc.main
 
 commands:
      loc:

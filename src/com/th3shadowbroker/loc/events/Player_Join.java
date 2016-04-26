@@ -9,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.th3shadowbroker.locs.main;
+import com.th3shadowbroker.loc.main;
 import com.th3shadowbroker.loc.obj.PlayerProfile;
 
 @SuppressWarnings("unused")

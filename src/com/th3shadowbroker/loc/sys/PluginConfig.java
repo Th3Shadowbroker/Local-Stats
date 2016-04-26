@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.th3shadowbroker.locs.main;
+import com.th3shadowbroker.loc.main;
 
 public class PluginConfig {
 	
