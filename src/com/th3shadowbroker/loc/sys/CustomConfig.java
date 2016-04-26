@@ -8,16 +8,19 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
 public final class CustomConfig {
-	private final String fileName;
+    
+    private final String fileName;
     private final Plugin plugin;
     private File configFile;
     private FileConfiguration fileConfiguration;
  
+    //Constructor
     public CustomConfig(Plugin plugin, String fileName) {
     	this.plugin = plugin;
     	this.fileName = fileName;
     }
  
+    //Reload config
     public void reloadConfig() {
         if (configFile == null) {
         	File dataFolder = plugin.getDataFolder();
@@ -30,6 +33,8 @@ public final class CustomConfig {
             fileConfiguration.setDefaults(defConfig);
       
     }
+    
+    //Return config as FileConfiguration
     public FileConfiguration getConfig() {
     	if (fileConfiguration == null) {
     		this.reloadConfig();
@@ -37,6 +42,7 @@ public final class CustomConfig {
         return fileConfiguration;
     }
  
+    //Save the config-file
     public void saveConfig() {
         if (fileConfiguration == null || configFile == null) {
             return;
@@ -49,6 +55,7 @@ public final class CustomConfig {
         }
     }
  
+    //Save default-config
     public void saveDefaultConfig() {
         if (!configFile.exists()) {       
             this.plugin.saveResource(fileName, false);
