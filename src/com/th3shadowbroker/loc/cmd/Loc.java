@@ -20,6 +20,11 @@ public class Loc implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String cmdLabel, String[] args) {
 		
+            if (sender instanceof Player)
+            {
+                /*
+                 *  If sender is player
+                 */
 		Player p = (Player) sender;
 		
 		if (cmd.getName().equalsIgnoreCase("loc"))
@@ -31,8 +36,21 @@ public class Loc implements CommandExecutor{
 				p.sendMessage(plugin.prefix + "Current Version: " + plugin.version);
 			}
 		}
-		
+                
+            }else{
+                
+                /*
+                 *  If sender is console
+                 */
+                
+                System.out.println(plugin.cprefix + "Local-Statistic System API");
+		System.out.println(plugin.cprefix + "Written by: " + plugin.author);
+		System.out.println(plugin.cprefix + "Current Version: " + plugin.version);
+                
+            }
+            
 		return false;
+                
 	}
 
 }
