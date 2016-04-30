@@ -150,7 +150,7 @@ public class PlayerProfile {
         public String getStatStr(String name)
         {
             
-            return profile.getConfig().getString(configPrefix + "." + name);
+            return profile.getConfig().getString(configPrefix + "." + player.getUniqueId().toString() + "." + name);
             
         }
         
@@ -158,21 +158,21 @@ public class PlayerProfile {
         public Integer getStatInt(String name)
         {
             
-            return profile.getConfig().getInt(configPrefix + "." + name);
+            return profile.getConfig().getInt(configPrefix + "." + player.getUniqueId().toString() + "." + name);
             
         }
         
         //Return stat as float
         public float getStatFloat(String name){
             
-            return (float) profile.getConfig().getInt(configPrefix + "." + name);
+            return (float) profile.getConfig().getInt(configPrefix + "." + player.getUniqueId().toString() + "." + name);
             
         }
         
          //Return stat as boolean
         public boolean getStatBool(String name){
             
-            return profile.getConfig().getBoolean(configPrefix + "." + name);
+            return profile.getConfig().getBoolean(configPrefix + "." + player.getUniqueId().toString() + "." + name);
             
         }
         
